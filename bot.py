@@ -14,7 +14,6 @@ dodge_count = 0
 
 while True:
     try:
-        win32gui.GetActiveWindow()
         color = win32gui.GetPixel(win32gui.GetDC(win32gui.GetActiveWindow()), x_pixel , y_pixel)
         if color > 11000000:
             print color
