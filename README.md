@@ -1,4 +1,4 @@
-# ffx_lightning_bolt_dodger
+# FFX Lightning bolt dodger
 Small script/Bot to do the lightning dodging minigame/sidequest in FFX
 
 
