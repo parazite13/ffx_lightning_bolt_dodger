@@ -9,20 +9,25 @@ x_pixel = 1915 # X cord of pixel to look at , im looking at top right of screen 
 y_pixel = 213  # Y cord
 
 time.sleep(3) # give me time to get ffx in focus
-print "BOT STARTED"
+print("BOT STARTED")
 dodge_count = 0
+
+window = win32gui.GetActiveWindow()
+dc = win32gui.GetDC(window)
 
 while True:
     try:
-        color = win32gui.GetPixel(win32gui.GetDC(win32gui.GetActiveWindow()), x_pixel , y_pixel)
+        color = win32gui.GetPixel(dc, x_pixel , y_pixel)
         if color > 11000000:
-            print color
-            print "LIGHTNING"
+            print(color)
+            print("LIGHTNING")
             dodge_count +=1
-            print dodge_count
+            print(dodge_count)
             keyboard.PressKey(KEY_C)
             time.sleep(1)
             keyboard.ReleaseKey(KEY_C)
             time.sleep(2)
     except:
         pass
+
+win32gui.ReleaseDC(window, dc)
